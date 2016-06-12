@@ -60,7 +60,7 @@ console.log( dniLetter( "A1234567" ) === 'Invalid parameter');
 // Open the console and reload the index page to see the result of the code.
 // Write a function that takes an array of words and returns the length of the longest one.
 
-
+/*
 
 function findLongestWord( array_words ){
 		var lengths = []
@@ -76,6 +76,7 @@ console.log( findLongestWord( ["Richie", "Joanie", "Greg", "Marcia", "Bobby"] ) 
 console.log( findLongestWord( ["Blanka", "Zangief", "Chun Li", "Guile"] ) === 7 );
 console.log( findLongestWord( ["Red", "Blue", "Green"] ) === 5 );
 
+*/
 
 
 //EXERCISE 4
@@ -92,22 +93,34 @@ var array_lengths = [];
 array_lengths.push( findLongestWord( ["Richie", "Joanie", "Greg", "Marcia", "Bobby"]) );
 array_lengths.push( findLongestWord( ["Blanka", "Zangief", "Chun Li", "Guile"] ) );
 array_lengths.push( findLongestWord( ["Red", "Blue", "Green"] ) );
+array_lengths.push( findLongestWord( ["tron", "broooooooooooooooooooooooooon", "fron"] ) );
+array_lengths.push( findLongestWord( ["ween", "peen", "deen"] ) );
+array_lengths.push( findLongestWord( ["bo", "no"] ) );
 //<place to add more lines>, read next commented text and you will understand
 
 console.log( "These are the longest lengths of each group: " + array_lengths );
-console.log( calculateAverage( array_lengths ) === 6 && "The average of longest lengths is: " + calculateAverage( array_lengths ))
+// console.log( calculateAverage( array_lengths ) === 6 && "The average of longest lengths is: " + calculateAverage( array_lengths ))
+console.log( "The average of longest lengths is: " + calculateAverage( array_lengths ))
 
 function calculateAverage( array )
 {
-	return( "Not implemented yet" )
+
+	var sums = 0
+	var total = 0
+for (i=(array_lengths.length-1); i>=0; i--){
+	sums +=array_lengths[i]
+	total =  sums/array_lengths.length
 }
 
+	return total
+}
+
+
+*/
 // Now add more lengths to the array_lengths. You have to do it where <place to add more lines> is written. 
 // You can use this structure: array_lengths.push( findLongestWord( [<add some elements>] ) );
 // Don't foget to add words to the array. The longer the better!
 // Now reload the page and see how changed the average.
-
-*/
 
 
 //EXERCISE 5
@@ -120,10 +133,20 @@ function calculateAverage( array )
 // As a condition you must use the object freqCounter.
 // Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 
-/*
+
 
 function charFreq( string ) {
-	freqCounter = {};
+	var freqCounter = {};
+	
+
+	for (i=(string.length-1); i>=0; i--){
+
+		if (string[i] in freqCounter) {
+        freqCounter[string[i]] += 1;
+    } else{
+		freqCounter[string[i]] = 1;
+    }
+	
 
 	}
 	return freqCounter;
@@ -134,6 +157,11 @@ console.log( counter['a'] === 7);
 console.log( counter.b === 14);
 console.log( counter['c'] === 3);
 
+console.log( counter['a'] );
+console.log( counter.b );
+console.log( counter['c']);
+
+
 counter = charFreq("xyyyxyxyxzyxyzyxyxyasdfz");
 console.log( counter.x === 7 );
 console.log( counter['y'] === 10 );
@@ -143,7 +171,7 @@ console.log( counter['s'] === 1 );
 console.log( counter.d === 1 );
 console.log( counter['f'] === 1 );
 
-*/
+
 
 
 //BONUS EXERCISE
